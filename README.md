@@ -6,3 +6,4 @@ Demo Shiny app of some census data in various stages of creation
 - [Better layout](https://ellisp.shinyapps.io/shiny-map-1-layout/) using fluid rows and columns ([source code](https://github.com/ellisp/shiny-multi-demo/tree/1-layout/shiny-map))
 - [web-friendly graphics and micro-interactivity](https://ellisp.shinyapps.io/shiny-map-2-micro-int/) using leaflet and ggvis (based on Vega) ([source code](https://github.com/ellisp/shiny-multi-demo/tree/2-micro-int/shiny-map))
 - [cross-filtering](https://ellisp.shinyapps.io/shiny-map-3-cross-filter/) - user can choose a region by clicking on it ([source code](https://github.com/ellisp/shiny-multi-demo/tree/3-cross-filter/shiny-map))
+- [Corporate styling](https://ellisp.shinyapps.io/shiny-map-4-styles/) - user can choose a region by clicking on it ([source code](https://github.com/ellisp/shiny-multi-demo/tree/4-styles/shiny-map))
