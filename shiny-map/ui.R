@@ -7,7 +7,7 @@ shinyUI(fluidPage(
   sidebarLayout(
     sidebarPanel(
       
-      selectInput("reg", "Choose a region", choices = all_sa4s, selected = all_sa4s[1])
+      selectInput("region", "Choose a region", choices = all_sa4s, selected = all_sa4s[1])
       ),
     
     mainPanel(
@@ -17,7 +17,7 @@ shinyUI(fluidPage(
            plotOutput("map"),
     
            h3("More detailed breakdown by age and education"),
-           ggvisOutput("barchart")
+           plotOutput("barchart")
     )
   )
 )

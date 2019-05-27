@@ -19,32 +19,18 @@ shinyServer(function(input, output, session) {
                   
     })
   
-  # identify which region has been clicked on, and return a relevant subset of data:
-  clicked <- reactive({
-    id = input$map_shape_click$id
-    if(!is.null(id)){
-      the_data <- school_sa4 %>%
-        dplyr::filter(SA4_NAME16 == id) 
-    } else {
-      # if nothing clicked, use the data for all Australia
-      the_data <- school_sa4 %>%
-        group_by(MaxSchoolingCompleted, Age) %>%
-        summarise(adults = sum(adults)) %>%
-        ungroup()
-    }
-    return(the_data)
+  region_data <- reactive({
+    school_sa4 %>%
+      filter(SA4_NAME16 == input$region)
   })
   
-  # draw the barchart with the data provided:
-  clicked %>%
-    ggvis(fill = ~MaxSchoolingCompleted, y = ~adults, x = ~Age) %>%
-    layer_bars(stroke := NA) %>%
-    scale_ordinal("fill", range = brewer.pal(9, "Spectral")) %>%
-    add_axis("y", title = "Number of adults", title_offset = 75) %>%
-    add_legend("fill", 
-               title = "Maximum school completed",
-               values = rev(levels(school_sa4$MaxSchoolingCompleted))) %>%
-  bind_shiny("barchart")
-
+    # draw the barchart with the data provided:
+  the_barchart <- reactive({
+    region_data() %>%
+      ggplot(aes(x = Age, y = adults, fill = MaxSchoolingCompleted)) +
+      geom_col() 
+    })
   
+  output$barchart <- renderPlot(the_barchart())
+
 })
