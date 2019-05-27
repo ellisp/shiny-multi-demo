@@ -1,8 +1,22 @@
 
 # Define UI for choropleth map / barchart app
 shinyUI(fluidPage(
+  tags$head(
+    tags$link(
+      rel = "stylesheet", 
+      type = "text/css", 
+      href = "corp-styles.css"),
+    tags$style(type="text/css", "body {padding-top: 10px;}")
+  ),
   
-  titlePanel("Australian Census 2016: 3 - cross filtering"),
+  fluidRow(
+    column(12, 
+           titlePanel(title = div(img(src="logo.svg", height = '42px', hspace ='30', align = 'left'),
+                                  h1("Australian Census 2016: 4 - corporate styling")),
+                      windowTitle = "Australian Census 2016 - demo shiny app")
+    )
+           
+  ),
   
   fluidRow(
     column(5,
