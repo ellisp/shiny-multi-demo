@@ -2,23 +2,23 @@
 # Define UI for choropleth map / barchart app
 shinyUI(fluidPage(
   
-  titlePanel("Australian Census 2016: 0 - basic"),
+  titlePanel("Australian Census 2016: 1 - better layout"),
   
-  sidebarLayout(
-    sidebarPanel(
-      
+  fluidRow(
+    column(6,
+      h3("Proportion of adults with year 10 or lower education"),
+      plotOutput("map"),
+     
       selectInput("region", "Choose a region", choices = all_sa4s, selected = all_sa4s[1])
       ),
     
-    mainPanel(
-      
-      
-           h3("Proportion of adults with year 10 or lower education"),
-           plotOutput("map"),
-    
+    column(6,
            h3("More detailed breakdown by age and education"),
            plotOutput("barchart")
     )
+  ),
+  fluidRow(
+    HTML("<p>A minimal demo of building a Shiny app with a map and a chart.</p>")
   )
 )
 )
