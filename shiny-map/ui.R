@@ -2,7 +2,7 @@
 # Define UI for choropleth map / barchart app
 shinyUI(fluidPage(
   
-  titlePanel("Australian Census 2016: 2 - web-friendly graphics"),
+  titlePanel("Australian Census 2016: 3 - cross filtering"),
   
   fluidRow(
     column(5,
