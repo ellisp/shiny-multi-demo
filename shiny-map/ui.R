@@ -2,7 +2,7 @@
 # Define UI for choropleth map / barchart app
 shinyUI(fluidPage(
   
-  titlePanel("Interactive map demo - Australian Census 2016"),
+  titlePanel("Australian Census 2016: 0 - basic"),
   
   sidebarLayout(
     sidebarPanel(
