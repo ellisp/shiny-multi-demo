@@ -39,6 +39,11 @@ shinyServer(function(input, output, session) {
       filter(SA4_NAME16 == input$region)
   })
   
+  clicked <- observe({
+    id = input$map_shape_click$id
+    updateSelectInput(session, "region", selected = id)
+  })
+  
     # draw the barchart with the data provided:
   region_data %>%
     ggvis(fill = ~MaxSchoolingCompleted, y = ~adults, x = ~Age) %>%
