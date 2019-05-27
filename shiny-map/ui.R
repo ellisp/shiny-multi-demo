@@ -7,14 +7,14 @@ shinyUI(fluidPage(
   fluidRow(
     column(6,
       h3("Proportion of adults with year 10 or lower education"),
-      plotOutput("map"),
+      leafletOutput("map"),
      
       selectInput("region", "Choose a region", choices = all_sa4s, selected = all_sa4s[1])
       ),
     
     column(6,
            h3("More detailed breakdown by age and education"),
-           plotOutput("barchart")
+           ggvisOutput("barchart")
     )
   ),
   fluidRow(

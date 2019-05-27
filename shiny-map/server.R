@@ -9,15 +9,30 @@
 shinyServer(function(input, output, session) {
   
   # define the map
-  output$map <- renderPlot({
+  # Define palette function for use with map 
+  pal_fun <- colorNumeric("Blues", NULL, n = 5)
+  
+  # Define popup function for use when hovering over regions
+  sa4_popup <- with(school_sa4_map, paste0(sa4_name_2016, ": ",
+                                           round(prop_yr10_below * 100), "%"))
+  
+  # define the map
+  output$map <- renderLeaflet({
     
-    school_sa4_map %>%
-      ggplot() +
-      geom_sf(aes(fill = prop_yr10_below)) +
-      scale_fill_viridis_c("Proportion of adults\nwith Year 10 or\nbelow schooling",
-                           label = percent)
-                  
-    })
+    leaflet(school_sa4_map) %>%
+      addPolygons(fillColor = ~pal_fun(prop_yr10_below),
+                  fillOpacity = 1,
+                  layerId = ~sa4_name_2016,
+                  stroke = TRUE,
+                  color = "grey20",
+                  label = sa4_popup
+      ) %>%
+      addLegend(pal = pal_fun,
+                values = ~prop_yr10_below,
+                opacity = 1,
+                title = "Below year 10")
+    
+  })
   
   region_data <- reactive({
     school_sa4 %>%
@@ -25,12 +40,14 @@ shinyServer(function(input, output, session) {
   })
   
     # draw the barchart with the data provided:
-  the_barchart <- reactive({
-    region_data() %>%
-      ggplot(aes(x = Age, y = adults, fill = MaxSchoolingCompleted)) +
-      geom_col() 
-    })
+  region_data %>%
+    ggvis(fill = ~MaxSchoolingCompleted, y = ~adults, x = ~Age) %>%
+    layer_bars(stroke := NA) %>%
+    scale_ordinal("fill", range = brewer.pal(9, "Spectral")) %>%
+    add_axis("y", title = "Number of adults", title_offset = 75) %>%
+    add_legend("fill", 
+               title = "Maximum school completed",
+               values = rev(levels(school_sa4$MaxSchoolingCompleted))) %>%
+    bind_shiny("barchart")
   
-  output$barchart <- renderPlot(the_barchart())
-
 })
