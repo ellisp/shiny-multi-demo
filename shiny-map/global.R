@@ -2,7 +2,8 @@
 
 library(shiny)
 library(leaflet)
-library(ggvis)
+library(ggplot2)
+library(scales)
 library(sf)
 library(dplyr)
 library(RColorBrewer)

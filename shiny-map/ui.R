@@ -14,7 +14,7 @@ shinyUI(fluidPage(
       
       
            h3("Proportion of adults with year 10 or lower education"),
-           leafletOutput("map"),
+           plotOutput("map"),
     
            h3("More detailed breakdown by age and education"),
            ggvisOutput("barchart")
