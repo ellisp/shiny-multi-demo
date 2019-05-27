@@ -15,7 +15,8 @@ shinyServer(function(input, output, session) {
       ggplot() +
       geom_sf(aes(fill = prop_yr10_below)) +
       scale_fill_viridis_c("Proportion of adults\nwith Year 10 or\nbelow schooling",
-                           label = percent)
+                           label = percent,
+                           option = "plasma")
                   
     })
   
