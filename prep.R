@@ -26,8 +26,9 @@ school_sa4_map <- sa42016 %>%
   ms_simplify(keep = 0.2) %>%
   left_join(school_sa4_sum, by = c("sa4_name_2016" = "SA4_NAME16"))
 
+all_sa4s <- unique(school_sa4$SA4_NAME16)
 
-
+save(all_sa4s, file = "shiny-map/data/all_sa4s.rda")
 save(school_sa4, file = "shiny-map/data/school_sa4.rda")
 save(school_sa4_map, file = "shiny-map/data/school_sa4_map.rda")
 

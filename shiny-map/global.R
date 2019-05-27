@@ -9,4 +9,4 @@ library(RColorBrewer)
 
 load("data/school_sa4.rda")
 load("data/school_sa4_map.rda")
-
+load("data/all_sa4s.rda")
