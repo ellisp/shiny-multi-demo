@@ -10,7 +10,7 @@ shinyServer(function(input, output, session) {
   
   # define the map
   # Define palette function for use with map 
-  pal_fun <- colorNumeric("Blues", NULL, n = 5)
+  pal_fun <- colorNumeric("plasma", domain = NULL)
   
   # Define popup function for use when hovering over regions
   sa4_popup <- with(school_sa4_map, paste0(sa4_name_2016, ": ",
