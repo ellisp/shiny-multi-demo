@@ -8,7 +8,7 @@
 
 shinyServer(function(input, output, session) {
   
-  # define the map
+  #------------define the map-----------------
   # Define palette function for use with map 
   pal_fun <- colorNumeric("plasma", domain = NULL)
   
@@ -34,6 +34,8 @@ shinyServer(function(input, output, session) {
     
   })
   
+  
+  #---------------choose a region's data---------------
   region_data <- reactive({
     school_sa4 %>%
       filter(SA4_NAME16 == input$region)
@@ -44,7 +46,7 @@ shinyServer(function(input, output, session) {
     updateSelectInput(session, "region", selected = id)
   })
   
-    # draw the barchart with the data provided:
+    #-----------draw the barchart with the data provided:-------------
   region_data %>%
     ggvis(fill = ~MaxSchoolingCompleted, y = ~adults, x = ~Age) %>%
     layer_bars(stroke := NA) %>%
@@ -54,5 +56,18 @@ shinyServer(function(input, output, session) {
                title = "Maximum school completed",
                values = rev(levels(school_sa4$MaxSchoolingCompleted))) %>%
     bind_shiny("barchart")
+  
+  #---------------pick an image----------
+  image_text <- reactive({
+    tmp <- state_lookup %>%
+      filter(sa4_name_2016 == input$region) %>%
+      pull(image_loc)
+    
+    tmp <- paste0("<img src='", tmp, "', width = '50%'>")
+    
+    return(tmp)
+  })
+  
+  output$image_text <- renderText(image_text())
   
 })
