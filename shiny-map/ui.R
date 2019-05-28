@@ -10,11 +10,9 @@ shinyUI(fluidPage(
   ),
   
   fluidRow(
-    column(12, 
-           titlePanel(title = div(img(src="logo.svg", height = '42px', hspace ='30', align = 'left'),
-                                  h1("Australian Census 2016: 4 - corporate styling")),
+           titlePanel(title = div(img(src="img/australians.jpg", height = '72px', hspace ='30', align = 'left'),
+                                  h1("Australian Census 2016: 4 - corporate typefaces")),
                       windowTitle = "Australian Census 2016 - demo shiny app")
-    )
            
   ),
   

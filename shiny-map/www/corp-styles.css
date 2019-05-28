@@ -1,16 +1,17 @@
 
 
-@import url("//fonts.googleapis.com/css?family=Montaga:400,700");
+@import url("//fonts.googleapis.com/css?family=Sarala:400,700");
+@import url("//fonts.googleapis.com/css?family=Roboto:400,700");
 
 h1 {
-  font-family: 'Montaga';
+  font-family: 'Sarala';
   font-weight: 500;
   line-height: 1.1;
   color: #ad1d28;
 }
 
 body {
-  font-family: Montaga, helvetica, sans-serif;
+  font-family: Roboto, helvetica, sans-serif;
 }
 
 
