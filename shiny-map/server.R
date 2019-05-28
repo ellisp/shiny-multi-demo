@@ -57,6 +57,11 @@ shinyServer(function(input, output, session) {
                values = rev(levels(school_sa4$MaxSchoolingCompleted))) %>%
     bind_shiny("barchart")
   
+  output$chart_title <- renderText({
+    paste0("<h3>Age and education in ",
+           input$region, "</h3>")
+  })
+  
   #---------------pick an image----------
   image_text <- reactive({
     tmp <- state_lookup %>%

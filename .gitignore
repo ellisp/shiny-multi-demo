@@ -36,6 +36,7 @@ vignettes/*.pdf
 rsconnect/
 .Rproj.user
 
-
+movies/*
 *.rda
+
 README.html

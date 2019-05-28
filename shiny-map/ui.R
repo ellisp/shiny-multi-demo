@@ -27,7 +27,7 @@ shinyUI(fluidPage(
       ),
     
     column(7,
-           h3("More detailed breakdown by age and education"),
+           htmlOutput("chart_title"),
            ggvisOutput("barchart")
     )
   ),
