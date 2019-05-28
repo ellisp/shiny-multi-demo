@@ -10,7 +10,7 @@ This repository has the source code for a web application built with Shiny, in v
 - [web-friendly graphics and micro-interactivity](https://ellisp.shinyapps.io/shiny-map-2-micro-int/) using leaflet and ggvis (based on Vega) ([source code](https://github.com/ellisp/shiny-multi-demo/tree/2-micro-int/shiny-map))
 - [cross-filtering](https://ellisp.shinyapps.io/shiny-map-3-cross-filter/) - user can choose a region by clicking on it ([source code](https://github.com/ellisp/shiny-multi-demo/tree/3-cross-filter/shiny-map))
 - [corporate styling](https://ellisp.shinyapps.io/shiny-map-4-styles/) - user can choose a region by clicking on it ([source code](https://github.com/ellisp/shiny-multi-demo/tree/4-styles/shiny-map))
-- [dynamic images](https://ellisp.shinyapps.io/shiny-map-4-dynamic-pictures/) - an image related to the state of the chosen region appears in the bottom left ([source code](https://github.com/ellisp/shiny-multi-demo/tree/5-images/shiny-map)). The aim is to illustrate how you can use pre-prepared material of any sort (including commentary and images) to interact with the user.
+- [dynamic images](https://ellisp.shinyapps.io/shiny-map-5-dynamic-pictures/) - an image related to the state of the chosen region appears in the bottom left ([source code](https://github.com/ellisp/shiny-multi-demo/tree/5-images/shiny-map)). The aim is to illustrate how you can use pre-prepared material of any sort (including commentary and images) to interact with the user.
 
 ## Usage of this code
 
