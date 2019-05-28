@@ -49,6 +49,6 @@ state_lookup <- school_sa4_map %>%
 save(all_sa4s, file = "shiny-map/data/all_sa4s.rda")
 save(school_sa4, file = "shiny-map/data/school_sa4.rda")
 save(school_sa4_map, file = "shiny-map/data/school_sa4_map.rda")
-save(state_lookup, file = "shiny-map/data/state_lookup")
+save(state_lookup, file = "shiny-map/data/state_lookup.rda")
   
 
