@@ -7,6 +7,7 @@ library(Census2016.DataPack)
 library(data.table)
 library(tidyverse)
 library(rmapshaper)
+library(sf)
 
 school_sa4 <- SA4__Age_MaxSchoolingCompleted_Sex %>%
   filter(!is.na(MaxSchoolingCompleted)) %>%
