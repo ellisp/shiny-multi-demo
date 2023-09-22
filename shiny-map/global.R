@@ -1,7 +1,6 @@
 # common functionality and data referred to both server-side and client-side
 
 library(shiny)
-library(leaflet)
 library(ggplot2)
 library(scales)
 library(sf)
