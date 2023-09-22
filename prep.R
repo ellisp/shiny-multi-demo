@@ -2,8 +2,8 @@
 #
 # Peter Elis 30 April 2019
 
-library(absmapsdata)
-library(Census2016.DataPack)
+library(absmapsdata)         # options(timeout = 1000); remotes::install_github("wfmackey/absmapsdata")
+library(Census2016.DataPack) # remotes::install_github("HughParsonage/Census2016.DataPack")
 library(data.table)
 library(tidyverse)
 library(rmapshaper)
