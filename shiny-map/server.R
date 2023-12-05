@@ -68,7 +68,7 @@ shinyServer(function(input, output, session) {
       filter(sa4_name_2016 == input$region) %>%
       pull(image_loc)
     
-    tmp <- paste0("<img src='", tmp, "', width = '50%'>")
+    tmp <- paste0("<center><img src='", tmp, "', width = '50%'></center>")
     
     return(tmp)
   })
