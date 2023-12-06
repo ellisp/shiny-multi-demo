@@ -18,7 +18,7 @@ If you want to just skim through the code, use the links above. But if you want 
 
 - clone this repository 
 - make sure you have installed the R packages that you need (they are listed in `setup.R` and in `shiny-map/global.R`) 
-- run the script `prep.R`, which creates some data objects needed for the web app which are not committed in the Git repository.
+- run the script `prep/prep.R`, which creates some data objects needed for the web app which are not committed in the Git repository.
 
 Then check out whichever branch you are interested in eg for the latest version:
 
